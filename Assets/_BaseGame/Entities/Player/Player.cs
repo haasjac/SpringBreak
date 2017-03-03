@@ -49,7 +49,7 @@ public class Player : MonoBehaviour {
         physics.velocity.y = Mathf.Max(-initialJumpVelocity, physics.velocity.y);
 
         // Handle Jumping
-        if (Input.GetKeyDown(KeyCode.Space)) // Input buffer
+        if (Input.GetButtonDown("Jump")) // Input buffer
             StartCoroutine(JumpInputBuffer());
         if (physics.grounded)
             canJump = true;
@@ -91,7 +91,7 @@ public class Player : MonoBehaviour {
     }
 
     IEnumerator CheckShortHop() {
-        while(Input.GetKey(KeyCode.Space)) {
+        while(Input.GetButton("Jump")) {
             if (physics.grounded == true || physics.velocity.y < 0)
                 yield break;
             yield return null;
