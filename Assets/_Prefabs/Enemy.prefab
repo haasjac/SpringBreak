@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4110866000285110}
   - component: {fileID: 212082356678578710}
+  - component: {fileID: 95300102561533794}
   m_Layer: 0
   m_Name: Art
   m_TagString: Untagged
@@ -109,6 +110,23 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 1, y: 0.9}
+--- !u!95 &95300102561533794
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1268155080343258}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cb6bf32132b3398419393bc80da36677, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114386025733780068
 MonoBehaviour:
   m_ObjectHideFlags: 1

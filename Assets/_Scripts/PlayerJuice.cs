@@ -29,8 +29,9 @@ public class PlayerJuice : MonoBehaviour {
         // Here are some variables you may want to use
         velocity = player.GetVelocity();
         grounded = player.GetIsGrounded();
-
-        idle = (velocity.magnitude <= 1f && grounded);
+        //print(velocity.magnitude);
+        //print(grounded);
+        idle = (velocity.magnitude <= 1f /*&& grounded*/);
         if (Input.GetAxis("Horizontal") < 0)
             facing_right = false;
         if (Input.GetAxis("Horizontal") > 0)
