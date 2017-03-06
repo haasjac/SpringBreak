@@ -5,22 +5,39 @@ using UnityEngine;
 //Modify this as much as you want
 public class PlayerJuice : MonoBehaviour {
     Player player;
+    Animator anim;
+    bool facing_right;
+    bool idle;
+    bool grounded;
+    Vector3 velocity;
 
     void Awake() {
         player = this.GetComponent<Player>();
+        anim = GetComponentInChildren<Animator>();
     }
 
 	// Use this for initialization
 	void Start () {
-		
-	}
+        facing_right = true;
+        velocity = Vector3.zero;
+        grounded = true;
+    }
 	
 	// Update is called once per frame, use this for anything you need to persistently update
     // For example, if your animation depends on the player speed set that here.
 	void Update () {
         // Here are some variables you may want to use
-        Vector3 velocity = player.GetVelocity();
-        bool grounded = player.GetIsGrounded();
+        velocity = player.GetVelocity();
+        grounded = player.GetIsGrounded();
+
+        idle = (velocity.magnitude <= 1f && grounded);
+        if (Input.GetAxis("Horizontal") < 0)
+            facing_right = false;
+        if (Input.GetAxis("Horizontal") > 0)
+            facing_right = true;
+
+        anim.SetBool("facing_right", facing_right);
+        anim.SetBool("idle", idle); 
     }
 
     // All of the functions below are called by other scripts
